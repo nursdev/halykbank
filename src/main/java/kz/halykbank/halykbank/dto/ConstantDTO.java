@@ -3,8 +3,11 @@
     import jakarta.persistence.*;
     import kz.halykbank.halykbank.model.Item;
     import lombok.Data;
+    import lombok.Getter;
+    import lombok.Setter;
 
-    @Data
+    @Getter
+    @Setter
     public class ConstantDTO {
 
         private Long id;
@@ -14,6 +17,4 @@
         private Integer value;
 
         private ItemDTO itemDTO;
-
-
     }

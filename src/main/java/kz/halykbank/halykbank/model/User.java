@@ -2,7 +2,10 @@ package kz.halykbank.halykbank.model;
 
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.aspectj.weaver.ast.Or;
 
 import java.util.ArrayList;
@@ -14,7 +17,6 @@ import java.util.List;
 @NoArgsConstructor
 @Data
 @Builder
-
 public class User {
 
     @Id
@@ -27,9 +29,6 @@ public class User {
 
     @Column(name = "name")
     private String name;
-
-    @OneToMany(mappedBy = "user")
-    private List<Organization> organizations = new ArrayList<>();
 
 
 
