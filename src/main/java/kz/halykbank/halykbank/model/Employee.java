@@ -27,10 +27,10 @@ public class Employee {
     private String lastName;
 
     @Column(name = "phone")
-    private String phone;
+    private String phoneNumber;
 
-    @OneToOne
-    private Employee employee;
+    @ManyToOne
+    private Organization organization;
 
 
 }

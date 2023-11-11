@@ -11,10 +11,15 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/v1/constant")
+@RequestMapping("/api/v1/constant")
 @RequiredArgsConstructor
 public class ConstantRestController {
+
     private final ConstantService constantService;
 
+    @GetMapping
+    public List<ConstantDTO> getList() {
+        return constantService.getList();
+    }
 
 }

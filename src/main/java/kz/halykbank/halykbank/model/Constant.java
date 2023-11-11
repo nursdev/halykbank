@@ -25,6 +25,6 @@ public class Constant {
     @Column(name = "value")
     private Integer value;
 
-    @OneToOne
+    @ManyToOne
     private Item item;
 }

@@ -31,7 +31,5 @@ public class Organization {
     @ManyToOne
     private User user;
 
-    @OneToMany(mappedBy = "organization")
-    private List<Item> items;
 
 }

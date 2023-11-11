@@ -34,6 +34,9 @@ public class Receipt {
     @ManyToOne
     private Employee employee;
 
+    @Column(name = "phoneNumber")
+    private String phoneNumber;
+
     @PostConstruct
     public void creationDate() {
         creationDate = LocalDateTime.now();

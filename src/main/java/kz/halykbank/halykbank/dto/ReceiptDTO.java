@@ -2,11 +2,14 @@ package kz.halykbank.halykbank.dto;
 
 import kz.halykbank.halykbank.model.Item;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
-@Data
+@Getter
+@Setter
 public class ReceiptDTO {
 
     private Long id;
@@ -15,5 +18,9 @@ public class ReceiptDTO {
 
     private Integer totalPrice;
 
-    private List<Item> items;
+    private String phoneNumber;
+
+    private EmployeeDTO employeeDTO;
+
+    private List<ItemDTO> itemsDTOs;
 }
