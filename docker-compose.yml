@@ -1,0 +1,20 @@
+version: '3'
+
+volumes:
+  spring-app-data:
+  postgres-data:
+
+services:
+  postgres:
+    image: postgres:15.3-alpine
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_DB: halykbank
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+
