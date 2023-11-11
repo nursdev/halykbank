@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -24,6 +25,8 @@ public class UserService {
 
     public List<UserDTO> getList() {
         return userMapper.toDTOList(userRepository.findAll());
-
+    }
+    public Optional<User> getUserByLogin(String login) {
+        return userRepository.getUserByLogin(login);
     }
 }
