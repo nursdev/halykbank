@@ -22,9 +22,6 @@ public class ConstantRestController {
         return constantService.getList();
     }
 
-    @GetMapping
-    private List<ConstantDTO> getList() {
-        return constantService.getConstantDTOList();
-    }
+
 
 }

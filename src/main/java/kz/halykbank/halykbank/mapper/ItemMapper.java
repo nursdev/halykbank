@@ -9,43 +9,46 @@ import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
+
+@Component
+@RequiredArgsConstructor
 public class ItemMapper {
 
-
-
-    public static ItemDTO toDTO(Item item) {
+    public ItemDTO toDTO(Item item) {
         ItemDTO itemDTO = new ItemDTO();
-        itemDTO.setId(item.getId());
+        itemDTO.setId(itemDTO.getId());
         itemDTO.setName(item.getName());
         itemDTO.setPrice(item.getPrice());
-
-        // Assuming you have an OrganizationConverter to convert Organization to OrganizationDTO
-        itemDTO.setOrganizationDTO(OrganizationMapper.toDTO(item.getOrganization()));
-
+        itemDTO.setOrganizationDTO(itemDTO.getOrganizationDTO());
         return itemDTO;
     }
 
-    public static Item toEntity(ItemDTO itemDTO) {
+    public Item toModel(ItemDTO itemDTO) {
         Item item = new Item();
-        item.setId(itemDTO.getId());
         item.setName(itemDTO.getName());
+        item.setId(itemDTO.getId());
         item.setPrice(itemDTO.getPrice());
-
-        // Assuming you have an OrganizationConverter to convert OrganizationDTO to Organization
-        item.setOrganization(OrganizationMapper.toEntity(itemDTO.getOrganizationDTO()));
+        item.setOrganization(item.getOrganization());
 
         return item;
+
     }
 
-    public static List<ItemDTO> toDTOList(List<Item> items) {
-        return items.stream()
-                .map(ItemMapper::toDTO)
-                .collect(Collectors.toList());
+    public List<ItemDTO> toDtoList(List<Item> items) {
+        List<ItemDTO> itemDTOS = new ArrayList<>();
+        for (Item item : items){
+            itemDTOS.add(toDTO(item));
+        }
+
+        return itemDTOS;
     }
 
-    public static List<Item> toEntityList(List<ItemDTO> itemDTOs) {
-        return itemDTOs.stream()
-                .map(ItemMapper::toEntity)
-                .collect(Collectors.toList());
+    public List<Item> toEntityList(List<ItemDTO> itemsDTOs) {
+        List<Item> items = new ArrayList<>();
+        for (ItemDTO itemDTO : itemsDTOs) {
+            items.add(toModel(itemDTO));
+        }
+
+        return items;
     }
 }
