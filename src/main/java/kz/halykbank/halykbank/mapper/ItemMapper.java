@@ -9,46 +9,43 @@ import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
-
-@Component
-@RequiredArgsConstructor
 public class ItemMapper {
 
-    public ItemDTO toDTO(Item item) {
+
+
+    public static ItemDTO toDTO(Item item) {
         ItemDTO itemDTO = new ItemDTO();
-        itemDTO.setId(itemDTO.getId());
+        itemDTO.setId(item.getId());
         itemDTO.setName(item.getName());
         itemDTO.setPrice(item.getPrice());
-        itemDTO.setOrganizationDTO(itemDTO.getOrganizationDTO());
+
+        // Assuming you have an OrganizationConverter to convert Organization to OrganizationDTO
+        itemDTO.setOrganizationDTO(OrganizationMapper.toDTO(item.getOrganization()));
+
         return itemDTO;
     }
 
-    public Item toModel(ItemDTO itemDTO) {
+    public static Item toEntity(ItemDTO itemDTO) {
         Item item = new Item();
-        item.setName(itemDTO.getName());
         item.setId(itemDTO.getId());
+        item.setName(itemDTO.getName());
         item.setPrice(itemDTO.getPrice());
-        item.setOrganization(item.getOrganization());
+
+        // Assuming you have an OrganizationConverter to convert OrganizationDTO to Organization
+        item.setOrganization(OrganizationMapper.toEntity(itemDTO.getOrganizationDTO()));
 
         return item;
-
     }
 
-    public List<ItemDTO> toDtoList(List<Item> items) {
-        List<ItemDTO> itemDTOS = new ArrayList<>();
-        for (Item item : items){
-            itemDTOS.add(toDTO(item));
-        }
-
-        return itemDTOS;
+    public static List<ItemDTO> toDTOList(List<Item> items) {
+        return items.stream()
+                .map(ItemMapper::toDTO)
+                .collect(Collectors.toList());
     }
 
-    public List<Item> toEntityList(List<ItemDTO> itemsDTOs) {
-        List<Item> items = new ArrayList<>();
-        for (ItemDTO itemDTO : itemsDTOs) {
-            items.add(toModel(itemDTO));
-        }
-
-        return items;
+    public static List<Item> toEntityList(List<ItemDTO> itemDTOs) {
+        return itemDTOs.stream()
+                .map(ItemMapper::toEntity)
+                .collect(Collectors.toList());
     }
 }

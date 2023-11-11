@@ -27,4 +27,6 @@ public class Constant {
 
     @ManyToOne
     private Item item;
+
+
 }

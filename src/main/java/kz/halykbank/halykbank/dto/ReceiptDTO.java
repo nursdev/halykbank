@@ -1,5 +1,6 @@
 package kz.halykbank.halykbank.dto;
 
+import kz.halykbank.halykbank.model.Employee;
 import kz.halykbank.halykbank.model.Item;
 import lombok.Data;
 import lombok.Getter;
@@ -23,4 +24,5 @@ public class ReceiptDTO {
     private EmployeeDTO employeeDTO;
 
     private List<ItemDTO> itemsDTOs;
+
 }
