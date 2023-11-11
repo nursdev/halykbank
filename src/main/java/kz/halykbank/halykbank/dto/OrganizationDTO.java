@@ -21,7 +21,4 @@ public class OrganizationDTO {
 
     private UserDTO userDTO;
 
-
-    private List<ItemDTO> itemsDTOs;
-
 }

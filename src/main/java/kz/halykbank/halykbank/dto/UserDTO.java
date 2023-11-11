@@ -22,7 +22,4 @@ public class UserDTO {
 
     private String name;
 
-
-    private List<OrganizationDTO> organizationsDTOs;
-
 }

@@ -38,7 +38,7 @@ public class OrganizationMapper {
         return organization;
     }
 
-    public  List<OrganizationDTO> toDTOList(List<Organization> organizations) {
+    public List<OrganizationDTO> toDTOList(List<Organization> organizations) {
         List<OrganizationDTO> organizationDTOS = new ArrayList<>();
         for (Organization organization : organizations) {
             organizationDTOS.add(toDTO(organization));
@@ -46,19 +46,13 @@ public class OrganizationMapper {
         return organizationDTOS;
     }
 
-    public  List<Organization> toEntityList(List<OrganizationDTO> organizationDTOs) {
+    public List<Organization> toEntityList(List<OrganizationDTO> organizationDTOs) {
         List<Organization> organizations = new ArrayList<>();
 
-        for (OrganizationDTO organizationDTO  : organizationDTOs) {
+        for (OrganizationDTO organizationDTO : organizationDTOs) {
             organizations.add(toEntity(organizationDTO));
-    }
-        return organizations;
-}
-
-
-
-
-
-
-
         }
+        return organizations;
+    }
+
+}
