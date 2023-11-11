@@ -10,6 +10,7 @@ public class FirstController {
 
     @GetMapping
     public String sayHello() {
+        System.out.println("---");
         return "hello";
     }
 }
