@@ -6,32 +6,31 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.aspectj.weaver.ast.Or;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
-@Table(name = "users")
+@Table(name = "employee")
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
 @Builder
-public class User {
+public class Employee {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "iin")
-    private String iin;
+    @Column(name = "firstName")
+    private String firstName;
 
-    @Column(name = "name")
-    private String name;
+    @Column(name = "lastName")
+    private String lastName;
 
-    @OneToMany(mappedBy = "user")
-    private List<Organization> organizations = new ArrayList<>();
+    @Column(name = "phone")
+    private String phone;
+
+    @OneToOne
+    private Employee employee;
 
 
 }

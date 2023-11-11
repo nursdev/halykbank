@@ -11,12 +11,12 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
-@Table(name = "check")
+@Table(name = "receipt")
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
 @Builder
-public class Check {
+public class Receipt {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,8 +31,12 @@ public class Check {
     @OneToMany
     private List<Item> items;
 
+    @ManyToOne
+    private Employee employee;
+
     @PostConstruct
     public void creationDate() {
         creationDate = LocalDateTime.now();
     }
+
 }
