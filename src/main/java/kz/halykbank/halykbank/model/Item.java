@@ -25,6 +25,7 @@ public class Item {
     @Column(name = "price")
     private Integer price;
 
+    @JoinColumn(name = "organization_id", referencedColumnName = "id")
     @ManyToOne
     private Organization organization;
 }
