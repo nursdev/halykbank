@@ -18,5 +18,4 @@ public class EmployeeDTO {
     private OrganizationDTO organizationDTO;
 
 
-
 }

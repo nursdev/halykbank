@@ -6,9 +6,11 @@ import kz.halykbank.halykbank.model.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
+
+
 import java.util.ArrayList;
+
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Component
 @RequiredArgsConstructor
@@ -21,7 +23,6 @@ public class UserMapper {
         userDTO.setId(user.getId());
         userDTO.setIin(user.getIin());
         userDTO.setName(user.getName());
-
         return userDTO;
     }
 
@@ -30,9 +31,9 @@ public class UserMapper {
         user.setId(userDTO.getId());
         user.setIin(userDTO.getIin());
         user.setName(userDTO.getName());
-
         return user;
     }
+
 
     public  List<UserDTO> toDTOList(List<User> users) {
         List<UserDTO> dtoList = new ArrayList<>();
