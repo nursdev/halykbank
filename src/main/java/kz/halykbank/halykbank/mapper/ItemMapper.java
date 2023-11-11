@@ -1,13 +1,16 @@
 package kz.halykbank.halykbank.mapper;
 
+import ch.qos.logback.core.read.ListAppender;
 import kz.halykbank.halykbank.dto.ItemDTO;
 import kz.halykbank.halykbank.model.Item;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 public class ItemMapper {
+
 
 
     public static ItemDTO toDTO(Item item) {
@@ -45,5 +48,4 @@ public class ItemMapper {
                 .map(ItemMapper::toEntity)
                 .collect(Collectors.toList());
     }
-
 }

@@ -32,8 +32,5 @@ public class Organization {
     @ManyToOne
     private User user;
 
-    @OneToMany(mappedBy = "organization")
-    @JsonBackReference
-    private List<Item> items;
 
 }

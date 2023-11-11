@@ -4,12 +4,17 @@ import jakarta.persistence.*;
 import kz.halykbank.halykbank.model.Organization;
 import kz.halykbank.halykbank.model.User;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Data
-public class UserDTO  {
+
+@Getter
+@Setter
+public class UserDTO {
+
 
     private Long id;
 
@@ -17,5 +22,7 @@ public class UserDTO  {
 
     private String name;
 
+
     private List<OrganizationDTO> organizationsDTOs;
+
 }

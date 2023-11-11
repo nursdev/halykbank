@@ -1,9 +1,10 @@
 package kz.halykbank.halykbank.dto;
 
-import kz.halykbank.halykbank.model.Employee;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
 public class EmployeeDTO {
 
     private Long id;
@@ -12,7 +13,9 @@ public class EmployeeDTO {
 
     private String lastName;
 
-    private String phone;
+    private String phoneNumber;
 
-    private EmployeeDTO employeeDTO;
+    private OrganizationDTO organizationDTO;
+
+
 }

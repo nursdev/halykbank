@@ -3,8 +3,11 @@ package kz.halykbank.halykbank.dto;
 import jakarta.persistence.*;
 import kz.halykbank.halykbank.model.Organization;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
 public class ItemDTO {
 
     private Long id;

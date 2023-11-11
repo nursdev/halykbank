@@ -27,8 +27,10 @@ public class Employee {
     private String lastName;
 
     @Column(name = "phone")
-    private String phone;
+    private String phoneNumber;
 
+    @ManyToOne
+    private Organization organization;
 
 
 }

@@ -11,12 +11,20 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
+
 public class ConstantService {
 
     private final ConstantRepository constantRepository;
+    private final ConstantMapper constantMapper;
 
     public List<ConstantDTO> getConstantDTOList() {
         return ConstantMapper.toDTOList(constantRepository.findAll());
     }
 
+    
+
+
+    public List<ConstantDTO> getList() {
+        return constantMapper.toDTOList(constantRepository.findAll());
+    }
 }
