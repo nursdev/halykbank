@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Data
-public class UserDTO extends User {
+public class UserDTO  {
 
     private Long id;
 
@@ -17,5 +17,5 @@ public class UserDTO extends User {
 
     private String name;
 
-    private List<Organization> organizations = new ArrayList<>();
+    private List<OrganizationDTO> organizationsDTOs;
 }

@@ -13,5 +13,10 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ConstantService {
 
+    private final ConstantRepository constantRepository;
+
+    public List<ConstantDTO> getConstantDTOList() {
+        return ConstantMapper.toDTOList(constantRepository.findAll());
+    }
 
 }

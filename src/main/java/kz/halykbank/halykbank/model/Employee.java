@@ -29,8 +29,6 @@ public class Employee {
     @Column(name = "phone")
     private String phone;
 
-    @OneToOne
-    private Employee employee;
 
 
 }

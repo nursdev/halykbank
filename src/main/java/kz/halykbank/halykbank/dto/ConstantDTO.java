@@ -13,5 +13,7 @@
 
         private Integer value;
 
-        private Item item;
+        private ItemDTO itemDTO;
+
+
     }

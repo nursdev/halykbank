@@ -17,4 +17,9 @@ public class ConstantRestController {
     private final ConstantService constantService;
 
 
+    @GetMapping
+    private List<ConstantDTO> getList() {
+        return constantService.getConstantDTOList();
+    }
+
 }

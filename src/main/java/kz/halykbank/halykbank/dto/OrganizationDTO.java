@@ -16,7 +16,7 @@ public class OrganizationDTO {
 
     private String address;
 
-    private User user;
+    private UserDTO userDTO;
 
-    private List<Item> items;
+    private List<ItemDTO> itemsDTOs;
 }

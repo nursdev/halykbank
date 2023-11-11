@@ -13,5 +13,5 @@ public class ItemDTO {
 
     private Integer price;
 
-    private Organization organization;
+    private OrganizationDTO organizationDTO;
 }

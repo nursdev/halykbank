@@ -14,5 +14,5 @@ public class EmployeeDTO {
 
     private String phone;
 
-    private Employee employee;
+    private EmployeeDTO employeeDTO;
 }
